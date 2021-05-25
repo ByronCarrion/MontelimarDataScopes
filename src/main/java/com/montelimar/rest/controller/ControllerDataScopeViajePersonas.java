@@ -39,31 +39,29 @@ public class ControllerDataScopeViajePersonas {
 		try {
 			
 
-			System.out.println(Body);
-			modelviajespersonales modelViajepersonas = new modelviajespersonales();
-			
-			 JSONArray jsonArray = new JSONArray(Body);
-			 JSONObject jsonObject = jsonArray.getJSONObject(0);
 			 ValidarJson Jsonvalidate = new ValidarJson();
+			 modelviajespersonales modelViajepersonas = new modelviajespersonales();
 			 
-			 modelViajepersonas.setFechaRegistro(Jsonvalidate.FormartFecha("dd-MM-yyyy HH:mm", Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Fecha de Registro [2]", "value")));
-			 modelViajepersonas.setLugarOrigen(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Lugar De Origen[3]", "value"));
-			 modelViajepersonas.setCapataz(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Capataz", "value"));
-			 modelViajepersonas.setDigitador(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Digitador [1]", "value"));
-			 modelViajepersonas.setLugarDestino1(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Lugar Destino 1[4]", "value"));
-			 modelViajepersonas.setLugarDestino2(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Lugar Destino 2[5]", "value"));
-			 modelViajepersonas.setLugarDestino3(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Lugar Destino 3[6]", "value"));
-			 modelViajepersonas.setLaborRealizar1(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Labor a Realizar 1[7]", "value"));
-			 modelViajepersonas.setLaborRealizar2(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Labor a Realizar 2[8]", "value"));
-			 modelViajepersonas.setLaborRealizar3(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Labor a Realizar 3[9]", "value"));
-			 modelViajepersonas.setPropietario(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Propietario[12]", "value"));
-			 modelViajepersonas.setHoraSalida(Jsonvalidate.FormartFecha("dd-MM-yyyy HH:mm",Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Hora De Salida[15]", "value")));
-			 modelViajepersonas.setPlaca(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Placa[10]", "value"));
-			 modelViajepersonas.setConductor(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Conductor[11]", "value"));
-			 modelViajepersonas.setCantidadPersona(Integer.parseInt(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Cantidad Personal[13]", "value")));
-			 modelViajepersonas.setFincaDestino(Jsonvalidate.ValidarnodeJsonObject(jsonObject, "Finca Destino[14]", "value"));
-			// modelViajepersonas.setIdRegistroForms(Jsonvalidate.ValidarnodeJsonObject(jsonObject, 0,  "value"));
-			 System.out.println(modelViajepersonas.toString());
+			 modelViajepersonas.jsonArray = new JSONArray(Body);
+			 modelViajepersonas.jsonObject = modelViajepersonas.jsonArray.getJSONObject(0);
+			 
+			 modelViajepersonas.setFechaRegistro(Jsonvalidate.FormartFecha("dd-MM-yyyy HH:mm", Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Fecha de Registro [2]", "value")));
+			 modelViajepersonas.setLugarOrigen(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Lugar De Origen[3]", "value"));
+			 modelViajepersonas.setCapataz(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Capataz", "value"));
+			 modelViajepersonas.setDigitador(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Digitador [1]", "value"));
+			 modelViajepersonas.setLugarDestino1(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Lugar Destino 1[4]", "value"));
+			 modelViajepersonas.setLugarDestino2(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Lugar Destino 2[5]", "value"));
+			 modelViajepersonas.setLugarDestino3(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Lugar Destino 3[6]", "value"));
+			 modelViajepersonas.setLaborRealizar1(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Labor a Realizar 1[7]", "value"));
+			 modelViajepersonas.setLaborRealizar2(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Labor a Realizar 2[8]", "value"));
+			 modelViajepersonas.setLaborRealizar3(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Labor a Realizar 3[9]", "value"));
+			 modelViajepersonas.setPropietario(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Propietario[12]", "value"));
+			 modelViajepersonas.setHoraSalida(Jsonvalidate.FormartFecha("dd-MM-yyyy HH:mm",Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Hora De Salida[15]", "value")));
+			 modelViajepersonas.setPlaca(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Placa[10]", "value"));
+			 modelViajepersonas.setConductor(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Conductor[11]", "value"));
+			 modelViajepersonas.setCantidadPersona(Integer.parseInt(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Cantidad Personal[13]", "value")));
+			 modelViajepersonas.setFincaDestino(Jsonvalidate.ValidarnodeJsonObject(modelViajepersonas.jsonObject, "Finca Destino[14]", "value"));
+			 modelViajepersonas.setIdRegistroForms(modelViajepersonas.jsonObject.getString("code"));
 			 
 			 RepositoryViajepersona.save(modelViajepersonas);
 
@@ -74,8 +72,4 @@ public class ControllerDataScopeViajePersonas {
 
 		return HttpStatus.OK.toString();
 	}
-
-
-
-
 }

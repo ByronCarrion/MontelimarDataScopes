@@ -1,0 +1,11 @@
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\DataHumedadFardosRepository.java
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\exception\ResourceNotFoundException.java
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\exception\GlobalExceptionHandler.java
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\MontelimarDataScopeApplication.java
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\model\DataScope.java
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\controller\DataScopeController.java
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\exception\ErrorDetails.java
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\DataScopeRepository.java
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\controller\ValidarJson.java
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\model\HumedadFardos.java
+D:\PV\SpringBoot\MontelimarDataScopes\src\main\java\com\montelimar\rest\webconfig.java

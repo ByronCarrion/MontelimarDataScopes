@@ -16,15 +16,15 @@ public class HumedadTemperatura {
 	private long Id;
 	
 	private int IdIngresoBascula;
-	private int Humedad;
-	private int Temperatura;
+	private double Humedad;
+	private double Temperatura;
 	private int Orden;
 	
 	
 	public HumedadTemperatura() {
 		
 	}
-	public HumedadTemperatura(long id, int idIngresoBascula, int humedad, int temperatura, int orden) {
+	public HumedadTemperatura(long id, int idIngresoBascula, double humedad, double temperatura, int orden) {
 		super();
 		Id = id;
 		IdIngresoBascula = idIngresoBascula;
@@ -44,16 +44,16 @@ public class HumedadTemperatura {
 	public void setIdIngresoBascula(int idIngresoBascula) {
 		IdIngresoBascula = idIngresoBascula;
 	}
-	public int getHumedad() {
+	public double getHumedad() {
 		return Humedad;
 	}
-	public void setHumedad(int humedad) {
+	public void setHumedad(double humedad) {
 		Humedad = humedad;
 	}
-	public int getTemperatura() {
+	public double getTemperatura() {
 		return Temperatura;
 	}
-	public void setTemperatura(int temperatura) {
+	public void setTemperatura(double temperatura) {
 		Temperatura = temperatura;
 	}
 	public int getOrden() {

@@ -38,8 +38,8 @@ public class ControllerDataScopeViajePersonas {
 
 		try {
 			
-
-			 ValidarJson Jsonvalidate = new ValidarJson();
+			ValidarJson Jsonvalidate = new ValidarJson();
+			 
 			 modelviajespersonales modelViajepersonas = new modelviajespersonales();
 			 
 			 modelViajepersonas.jsonArray = new JSONArray(Body);

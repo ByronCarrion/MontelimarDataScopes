@@ -57,12 +57,12 @@ public class HumedadFardos {
 		
 	}
 
-
+	@Column(name = "Orden", nullable = false)
 	public long getOrden() {
 		return Orden;
 	}
 
-	@Column(name = "Orden", nullable = false)
+	
 	public void setOrden(long orden) {
 		this.Orden = orden;
 	}

@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name ="IngresoBascula")
-public class RegistroBascula {
+public class RegistroBascula extends Jutilidades {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

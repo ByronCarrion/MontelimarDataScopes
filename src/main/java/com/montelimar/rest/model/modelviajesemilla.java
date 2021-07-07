@@ -13,6 +13,7 @@ public class modelviajesemilla extends Jutilidades {
 	private String CapatazCorte; 
 	private String CapatazCargue;
 	private String FechaRegistro; 
+	private String Zona;
 	private String FincaOrigen; 
 	private String CodLote; 
 	private String Variedad; 
@@ -32,7 +33,7 @@ public class modelviajesemilla extends Jutilidades {
 		
 	}
 
-	public modelviajesemilla(int id, String capatazCorte, String capatazCargue, String fechaRegistro,
+	public modelviajesemilla(int id, String capatazCorte, String capatazCargue, String fechaRegistro, String zona,
 			String fincaOrigen, String codLote, String variedad, String tipoSemilla, String tipoVehiculo, String placa,
 			String conductor, String propietario, int cantidadSemilla, String fincaDestino, String horaSalida,
 			String kmRegistro, String idRegistroForms) {
@@ -41,6 +42,7 @@ public class modelviajesemilla extends Jutilidades {
 		CapatazCorte = capatazCorte;
 		CapatazCargue = capatazCargue;
 		FechaRegistro = fechaRegistro;
+		Zona = zona;
 		FincaOrigen = fincaOrigen;
 		CodLote = codLote;
 		Variedad = variedad;
@@ -225,12 +227,22 @@ public class modelviajesemilla extends Jutilidades {
 	public void setIdRegistroForms(String idRegistroForms) {
 		IdRegistroForms = idRegistroForms;
 	}
+	
+	
 
+	@Column(name = "Zona", nullable = false)
+	public String getZona() {
+		return Zona;
+	}
+
+	public void setZona(String zona) {
+		Zona = zona;
+	}
 
 	@Override
 	public String toString() {
 		return "modelviajesemilla [Id=" + Id + ", CapatazCorte=" + CapatazCorte + ", CapatazCargue=" + CapatazCargue
-				+ ", FechaRegistro=" + FechaRegistro + ", FincaOrigen=" + FincaOrigen + ", CodLote=" + CodLote
+				+ ", FechaRegistro=" + FechaRegistro + ", Zona=" + Zona + ", FincaOrigen=" + FincaOrigen + ", CodLote=" + CodLote
 				+ ", Variedad=" + Variedad + ", TipoSemilla=" + TipoSemilla + ", TipoVehiculo=" + TipoVehiculo
 				+ ", Placa=" + Placa + ", Conductor=" + Conductor + ", Propietario=" + Propietario
 				+ ", CantidadSemilla=" + CantidadSemilla + ", FincaDestino=" + FincaDestino + ", HoraSalida="

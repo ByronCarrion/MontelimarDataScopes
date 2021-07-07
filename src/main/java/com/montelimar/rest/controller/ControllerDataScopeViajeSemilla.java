@@ -42,6 +42,7 @@ public class ControllerDataScopeViajeSemilla {
 			modelviajesemilla.setCapatazCorte(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Capataz De Corte", "value"));
 			modelviajesemilla.setCapatazCargue(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Capataz De Cargue [1]", "value"));
 			modelviajesemilla.setFechaRegistro(Jsonvalidate.FormartFecha("dd-MM-yyyy HH:mm", Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Fecha De Registro[2]", "value")));
+			modelviajesemilla.setZona(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "", "value")); //Nuevoparametro
 			modelviajesemilla.setVariedad(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Variedades [5]", "value"));
 			modelviajesemilla.setTipoSemilla(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Tipo De Semilla[6]", "value"));
 			modelviajesemilla.setTipoVehiculo(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Tipo De Vehículo[7]", "value"));

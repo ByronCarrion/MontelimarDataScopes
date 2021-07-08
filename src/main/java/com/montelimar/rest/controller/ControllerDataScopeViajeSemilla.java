@@ -33,6 +33,7 @@ public class ControllerDataScopeViajeSemilla {
 
 		try {
 			
+			System.out.println(Body);
 			modelviajesemilla modelviajesemilla = new modelviajesemilla();
 			ValidarJson Jsonvalidate = new ValidarJson();
 			
@@ -42,18 +43,19 @@ public class ControllerDataScopeViajeSemilla {
 			modelviajesemilla.setCapatazCorte(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Capataz De Corte", "value"));
 			modelviajesemilla.setCapatazCargue(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Capataz De Cargue [1]", "value"));
 			modelviajesemilla.setFechaRegistro(Jsonvalidate.FormartFecha("dd-MM-yyyy HH:mm", Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Fecha De Registro[2]", "value")));
-			modelviajesemilla.setZona(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "", "value")); //Nuevoparametro
-			modelviajesemilla.setVariedad(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Variedades [5]", "value"));
-			modelviajesemilla.setTipoSemilla(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Tipo De Semilla[6]", "value"));
-			modelviajesemilla.setTipoVehiculo(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Tipo De Vehículo[7]", "value"));
-			modelviajesemilla.setKmRegistro(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Km Recorrido[13]", "value"));
-			modelviajesemilla.setFincaOrigen(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Finca Origen[3]", "value"));
-			modelviajesemilla.setCodLote(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Cod Lote[4]", "value"));
-			modelviajesemilla.setPlaca(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Placa[8]", "value"));
-			modelviajesemilla.setConductor(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Conductor[9]", "value"));
-			modelviajesemilla.setCantidadSemilla(Integer.parseInt(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Cantidad Semilla[10]", "value")));
-			modelviajesemilla.setFincaDestino(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Finca Destino[11]", "value"));
-			modelviajesemilla.setHoraSalida(Jsonvalidate.FormartFecha("dd-MM-yyyy HH:mm", Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Hora Salida[12]", "value")));
+			modelviajesemilla.setZona(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Zona[3]", "value")); 
+			modelviajesemilla.setVariedad(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Variedades [6]", "value"));
+			modelviajesemilla.setTipoSemilla(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Tipo De Semilla[7]", "value"));
+			modelviajesemilla.setTipoVehiculo(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Tipo De Vehículo[8]", "value"));
+			modelviajesemilla.setKmRegistro(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Km Recorrido[14]", "value"));
+			modelviajesemilla.setFincaOrigen(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Finca Origen[4]", "value"));
+			modelviajesemilla.setCodLote(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Cod Lote[5]", "value"));
+			modelviajesemilla.setPlaca(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Placa[9]", "value"));
+			modelviajesemilla.setConductor(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Conductor[10]", "value"));
+			modelviajesemilla.setPropietario(Jsonvalidate.ValidarnodeJsonObject(modelviajesemilla.jsonObject, "Propietario[11]", "value"));
+			modelviajesemilla.setCantidadSemilla(Integer.parseInt(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Cantidad Semilla[12]", "value")));
+			modelviajesemilla.setFincaDestino(Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Finca Destino[13]", "value"));
+			modelviajesemilla.setHoraSalida(Jsonvalidate.FormartFecha("dd-MM-yyyy HH:mm", Jsonvalidate.ValidarnodeJsonObject( modelviajesemilla.jsonObject, "Hora Salida[14]", "value")));
 			modelviajesemilla.setIdRegistroForms( modelviajesemilla.jsonObject.getString("code"));
 			
 			RepositoryViajesemilla.save(modelviajesemilla);

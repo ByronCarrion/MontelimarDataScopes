@@ -38,6 +38,8 @@ public class ControllerDataScopeViajePersonas {
 
 		try {
 			
+			System.out.println(Body);
+			
 			ValidarJson Jsonvalidate = new ValidarJson();
 			 
 			 modelviajespersonales modelViajepersonas = new modelviajespersonales();

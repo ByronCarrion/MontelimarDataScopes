@@ -1,6 +1,7 @@
 package com.montelimar.rest.controller;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
@@ -28,9 +29,9 @@ public class ValidarJson {
 		try {
 			
 			DateTimeFormatter formatISO = DateTimeFormatter.ofPattern(Format);
-			DateTimeFormatter formatoEstandar = DateTimeFormatter.ofPattern("yyyy-MM-dd"); 
+			DateTimeFormatter formatoEstandar = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:s"); 
 			 
-			LocalDate date =LocalDate.parse(Fecha,formatISO);
+			LocalDateTime date =LocalDateTime.parse(Fecha,formatISO);
 			Fecha = formatoEstandar.format(date);
 			
 		} catch (Exception e) {

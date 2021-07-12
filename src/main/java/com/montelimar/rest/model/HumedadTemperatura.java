@@ -1,5 +1,6 @@
 package com.montelimar.rest.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +16,7 @@ public class HumedadTemperatura {
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
 	private long Id;
 	
-	private int IdIngresoBascula;
+	private Long IdIngresoBascula;
 	private double Humedad;
 	private double Temperatura;
 	private int Orden;
@@ -24,9 +25,8 @@ public class HumedadTemperatura {
 	public HumedadTemperatura() {
 		
 	}
-	public HumedadTemperatura(long id, int idIngresoBascula, double humedad, double temperatura, int orden) {
+	public HumedadTemperatura(Long idIngresoBascula, double humedad, double temperatura, int orden) {
 		super();
-		Id = id;
 		IdIngresoBascula = idIngresoBascula;
 		Humedad = humedad;
 		Temperatura = temperatura;
@@ -38,18 +38,22 @@ public class HumedadTemperatura {
 	public void setId(long id) {
 		Id = id;
 	} 
-	public int getIdIngresoBascula() {
+	
+	@Column(name = "IdIngresoBascula", nullable = false)
+	public Long getIdIngresoBascula() {
 		return IdIngresoBascula;
 	}
-	public void setIdIngresoBascula(int idIngresoBascula) {
+	public void setIdIngresoBascula(Long idIngresoBascula) {
 		IdIngresoBascula = idIngresoBascula;
 	}
+	@Column(name = "Humedad", nullable = false)
 	public double getHumedad() {
 		return Humedad;
 	}
 	public void setHumedad(double humedad) {
 		Humedad = humedad;
 	}
+	@Column(name = "Temperatura", nullable = false)
 	public double getTemperatura() {
 		return Temperatura;
 	}
@@ -59,6 +63,7 @@ public class HumedadTemperatura {
 	public int getOrden() {
 		return Orden;
 	}
+	@Column(name = "Orden", nullable = false)
 	public void setOrden(int orden) {
 		Orden = orden;
 	}

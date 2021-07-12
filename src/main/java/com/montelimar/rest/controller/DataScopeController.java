@@ -79,20 +79,14 @@ public class DataScopeController {
 		 EntityDataScope.setFechaDespacho(Jsonvalidate.FormartFecha("dd-MM-yyyy HH:mm", Jsonvalidate.ValidarnodeJsonObject(jsonObject,"Fecha y Hora de despacho","value")));
 		 EntityDataScope.setCODLOTENOMBRE(Jsonvalidate.ValidarnodeJsonObject( jsonObject,"Código lote + Nombre[4]","value" ));
 		 EntityDataScope.setCONT_COMPRA(Jsonvalidate.ValidarnodeJsonObject(jsonObject,"Contrato de Compra[6]","value"));
-		 
-
-		
 		
 		 try {
 	
 		 DataScopeRepository.save(EntityDataScope);
 		 List<HumedadFardos> f = new ArrayList<>();
-		 for (int i = 1; i <= 12; i++) {
-		
-			 System.out.println("Humedad "+i+"[13]");
-			 //fardos.setDescripcion(json.getString("Humedad en Fardos - Humedad "+i+"[0]"));
-			 f.add(new HumedadFardos (EntityDataScope.getId(), Jsonvalidate.ValidarnodeJsonObject(jsonObject,"Humedad "+i+"[13]","value"), i ));
-			 
+		 for (int i = 1; i <= 12; i++) {	
+			 System.out.println("Humedad "+i+"[13]");	
+			 f.add(new HumedadFardos (EntityDataScope.getId(), Jsonvalidate.ValidarnodeJsonObject(jsonObject,"Humedad "+i+"[13]","value"), i ));			 
 			 if (i % batchSize == 0 && i > 0) {
 				DataHumedadFardosRepository.saveAll(f);
 				f.clear();

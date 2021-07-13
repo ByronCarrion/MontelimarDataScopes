@@ -3,8 +3,8 @@ package com.montelimar.rest.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Datascopeformulario")
-public class DataScope {
+@Table(name = "BoletaRecCampo")
+public class BoletaRecCampo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,10 +25,10 @@ public class DataScope {
 
 
 	
-	public DataScope() {
+	public BoletaRecCampo() {
 	}
 
-	public DataScope(long id, String FechaDespacho, String rEC, String fINCA, String CODLOTENOMBRE, String cONT_COMPRA,
+	public BoletaRecCampo(long id, String FechaDespacho, String rEC, String fINCA, String CODLOTENOMBRE, String cONT_COMPRA,
 			String cONT_MAQUILA, String cONT_TRANSPORTE, String nombreConductor, String placaCabezal, String tipoFardo,
 			int Número_de_Fardos, String nombreFiscalREc) {
 		

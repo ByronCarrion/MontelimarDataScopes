@@ -31,7 +31,7 @@ public class DataScopeController {
 	
 	
 	 @RequestMapping( value = "/datascope", method= RequestMethod.GET )
-	    public List<DataScope> getAllEmployees() {
+	    public List<BoletaRecCampo> getAllEmployees() {
 		
 	        return DataScopeRepository.findAll() ;
 	    }
@@ -43,10 +43,10 @@ public class DataScopeController {
 	    }
 	 	 
 	 @GetMapping("/datascope/{id}")
-	 public ResponseEntity<DataScope>GetDataScopeByID(@PathVariable(value = "id") Long DataScopeId )
+	 public ResponseEntity<BoletaRecCampo>GetDataScopeByID(@PathVariable(value = "id") Long DataScopeId )
 	throws ResourceNotFoundException {
 		 
-		 DataScope Data = DataScopeRepository.findById(DataScopeId).orElseThrow(() -> new ResourceNotFoundException("Registro No Encontrado por este Id ::" + DataScopeId));
+		 BoletaRecCampo Data = DataScopeRepository.findById(DataScopeId).orElseThrow(() -> new ResourceNotFoundException("Registro No Encontrado por este Id ::" + DataScopeId));
 		// HumedadFardos Fardos = DataHumedadFardosRepository.findById(DataScopeId).orElseThrow(() -> new ResourceNotFoundException("Registro No Encontrado por este Id ::" + DataScopeId));
 		 
 		 return ResponseEntity.ok().body(Data);
@@ -60,7 +60,7 @@ public class DataScopeController {
 		try {
 			System.out.println(datascope);
 		
-		 DataScope EntityDataScope = new DataScope();
+		 BoletaRecCampo EntityDataScope = new BoletaRecCampo();
 		 HumedadFardos fardos = new HumedadFardos();
 		 ValidarJson Jsonvalidate = new ValidarJson();
 
